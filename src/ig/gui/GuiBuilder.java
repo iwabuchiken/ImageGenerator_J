@@ -1,5 +1,7 @@
 package ig.gui;
 
+import ig.utils.Ops;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -13,6 +15,36 @@ public class GuiBuilder {
 	public static void 
 	createContents__Buttons(Shell shlSwtApplication) {
 		// TODO Auto-generated method stub
+		
+		_createContents__Buttons_Quit(shlSwtApplication);
+		
+		_createContents__Buttons_Execute(shlSwtApplication);
+		
+//		_createContents__Buttons_Execute();
+		
+	}//_createContents__Buttons()
+
+	private static void 
+	_createContents__Buttons_Execute
+	(Shell shlSwtApplication) {
+		// TODO Auto-generated method stub
+		Button btnExecute = new Button(shlSwtApplication, SWT.NONE);
+		btnExecute.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				
+				Ops.open_ImageWindow();
+				
+			}
+		});
+		btnExecute.setBounds(395, 278, 115, 37);
+		btnExecute.setText("Execute");
+
+	}//_createContents__Buttons_Execute
+
+	private static void 
+	_createContents__Buttons_Quit(Shell shlSwtApplication) {
+		// TODO Auto-generated method stub
 		Button btnQuit = new Button(shlSwtApplication, SWT.NONE);
 		btnQuit.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -25,17 +57,7 @@ public class GuiBuilder {
 		btnQuit.setBounds(395, 357, 115, 37);
 		btnQuit.setText("Quit");
 
-//		_createContents__Buttons_Execute();
-		Button btnExecute = new Button(shlSwtApplication, SWT.NONE);
-		btnExecute.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-			}
-		});
-		btnExecute.setBounds(395, 278, 115, 37);
-		btnExecute.setText("Execute");
-		
-	}//_createContents__Buttons()
+	}//_createContents__Buttons_Quit()
 
 	public static void 
 	createContents__Menues(Shell shlSwtApplication) {
